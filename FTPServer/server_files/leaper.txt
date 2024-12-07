@@ -1,0 +1,47 @@
+#!/bin/bash
+read -p "Enter a year: " year
+year1=$year
+c1=0
+c2=0
+while ((1))
+do
+
+if((year%400==0))
+then
+ ans1=$year
+ break
+elif((year%100!=0 && year%4==0))
+then
+ans1=$year
+break
+else
+((year++))
+((c1++))
+fi
+  done
+  year=$year1
+  while ((1))
+do
+
+if((year%400==0))
+then
+ ans2=$year
+ break
+elif((year%100!=0 && year%4==0))
+then
+ans2=$year
+break
+else
+((year--))
+((c2++))
+fi
+  done
+  if((c1<c2))
+  then
+  echo $ans1
+  else
+  echo $ans2
+  fi
+
+}
+}
